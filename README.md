@@ -17,33 +17,9 @@ This project demonstrates a basic login interface designed to authenticate users
 - Input fields for **Email** and **Password**.
 - Designed with **Storyboard** to easily visualize and manage layout elements.
 
-## Screenshots
+## Vedio
 
-Below are some screenshots of the login page:
-
-### AppIcon
-<img width="356" alt="Screenshot 2024-11-12 at 1 27 58 PM" src="https://github.com/user-attachments/assets/dc5f35b2-cc06-407a-8300-83d9306fa50a">
-
-
-### Home Screen
-<img width="356" alt="Screenshot 2024-11-12 at 1 56 51 PM" src="https://github.com/user-attachments/assets/1c202f1f-c6de-41a0-a664-49dec9a96fb4">
-
-
-### Welcome Screen
-<img width="207" alt="Screenshot 2024-11-12 at 1 52 11 PM" src="https://github.com/user-attachments/assets/989c7cd5-1445-404d-9392-e0e8750c1226">
-
-
-### Login Screen
-<img width="356" alt="Screenshot 2024-11-12 at 1 29 10 PM" src="https://github.com/user-attachments/assets/0baaeeb2-5c9c-4c5e-a8c1-1bf60ee8c2cd">
-
-
-### Trouble Logging In
-<img width="356" alt="Screenshot 2024-11-12 at 1 29 22 PM" src="https://github.com/user-attachments/assets/5abb7277-c665-418e-b6e9-51345adb53b0">
-
-
-### Create Account Screen
-<img width="356" alt="Screenshot 2024-11-12 at 1 29 38 PM" src="https://github.com/user-attachments/assets/a31d035a-795e-45da-be4a-39c70ff78138">
-
+https://github.com/user-attachments/assets/17af540a-ce35-4dba-b548-4cd400ec8b22
 
 ## Requirements
 
