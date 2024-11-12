@@ -8,12 +8,18 @@
 import UIKit
 
 class buttonVC: UIViewController {
+    @IBOutlet weak var createButton: UIButton!
+    @IBOutlet weak var alreadyButton: UIButton!
+
     
     @IBOutlet weak var myButton: UIButton! // Connect one of your buttons
     // Note: You don't need to connect every button as an outlet
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        buttonTapped(createButton)
+        buttonTapped(alreadyButton)
+
         
         // Set default appearance for your button
         myButton.layer.cornerRadius = 10

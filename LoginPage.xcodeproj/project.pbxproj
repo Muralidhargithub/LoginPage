@@ -29,6 +29,11 @@
 			path = LoginPage;
 			sourceTree = "<group>";
 		};
+		37E0BDA22CE3D98900DA284C /* loginproj_IMG 2 */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "loginproj_IMG 2";
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +50,7 @@
 		37AB35992CE2B4CE00478358 = {
 			isa = PBXGroup;
 			children = (
+				37E0BDA22CE3D98900DA284C /* loginproj_IMG 2 */,
 				37AB35A42CE2B4CE00478358 /* LoginPage */,
 				37AB35A32CE2B4CE00478358 /* Products */,
 			);
@@ -75,6 +81,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				37AB35A42CE2B4CE00478358 /* LoginPage */,
+				37E0BDA22CE3D98900DA284C /* loginproj_IMG 2 */,
 			);
 			name = LoginPage;
 			packageProductDependencies = (
@@ -147,6 +154,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoginPage/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FreshGrads;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -174,6 +182,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoginPage/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = FreshGrads;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
