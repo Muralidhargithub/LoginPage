@@ -8,22 +8,29 @@
 import UIKit
 
 class buttonVC: UIViewController {
-
+    
+    @IBOutlet weak var myButton: UIButton! // Connect one of your buttons
+    // Note: You don't need to connect every button as an outlet
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Set default appearance for your button
+        myButton.layer.cornerRadius = 10
+        myButton.clipsToBounds = true
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //    @IBAction func buttonTapped(_ sender: UIButton) {
+    //        // Only change the color for buttons with a tag of 1
+    //        if sender.tag == 1 {
+    //            sender.setTitleColor(.orange, for: .normal)
+    //        }
+    //    }
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        // Check if the button’s tag is 1
+        if sender.tag == 1 {
+            sender.setTitleColor(.orange, for: .normal) // Change the title color to orange
+        }
     }
-    */
-
+    
 }
