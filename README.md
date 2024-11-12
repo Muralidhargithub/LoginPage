@@ -19,7 +19,6 @@ This project demonstrates a basic login interface designed to authenticate users
 
 ## Vedio
 
-https://github.com/user-attachments/assets/17af540a-ce35-4dba-b548-4cd400ec8b22
 
 ## Requirements
 
