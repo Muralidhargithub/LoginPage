@@ -24,8 +24,9 @@ Below are some screenshots of the login page:
 ### AppIcon
 <img width="356" alt="Screenshot 2024-11-12 at 1 27 58 PM" src="https://github.com/user-attachments/assets/dc5f35b2-cc06-407a-8300-83d9306fa50a">
 
+
 ### Home Screen
-<img width="356" alt="Screenshot 2024-11-12 at 1 29 38 PM" src="https://github.com/user-attachments/assets/2bcec166-41fd-4fc2-bf60-6b745b249026">
+<img width="356" alt="Screenshot 2024-11-12 at 1 56 51 PM" src="https://github.com/user-attachments/assets/1c202f1f-c6de-41a0-a664-49dec9a96fb4">
 
 
 ### Welcome Screen
