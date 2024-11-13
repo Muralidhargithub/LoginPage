@@ -9,25 +9,33 @@ import UIKit
 
 class TroubleLoginVC: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet var back: UIButton!
     @IBOutlet var textCornerRadius: UITextField!
     @IBOutlet var sendButtonRadius: UIButton!
-    @IBOutlet var backButtonradius: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        applyCornerRadius(to: textCornerRadius)
-        applyCornerRadius(to: sendButtonRadius)
-        applyCornerRadius(to: backButtonradius)
+        applyCornerRadius(textCornerRadius)
+        applyCornerRadius(sendButtonRadius)
+        applyCornerRadius(back)
+        setupTextFieldAppearance(textCornerRadius)
         
         textCornerRadius.delegate = self
 
 
         
     }
-    func applyCornerRadius(to view: UIView) {
+    func applyCornerRadius(_ view: UIView) {
         view.layer.cornerRadius = 10
         view.clipsToBounds = true
     }
+    
+    func setupTextFieldAppearance(_ view:UIView) {
+        // Set the default border color and width
+        view.layer.borderColor = UIColor.orange.cgColor // Default color
+        view.layer.borderWidth = 1.0 // Set border width
+    }
+    
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         // Highlight the border color
@@ -42,4 +50,10 @@ class TroubleLoginVC: UIViewController, UITextFieldDelegate {
         textField.layer.borderWidth = 1.0 // Reset width
     }
 
+    @IBAction func back(_ sender: Any) {
+        let loginvc = self.storyboard?.instantiateViewController(withIdentifier: "Loginvc") as? Loginvc
+        if let objloginvc = loginvc{
+            self.navigationController?.pushViewController(objloginvc, animated: true)
+        }
+    }
 }

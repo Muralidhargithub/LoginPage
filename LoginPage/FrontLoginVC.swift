@@ -10,8 +10,8 @@ import UIKit
 class FrontLoginVC: UIViewController {
 
     @IBOutlet var loginButton: UIButton!
-    @IBOutlet var registerButton: UIButton!
     
+    @IBOutlet var registerButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonradius(loginButton)
