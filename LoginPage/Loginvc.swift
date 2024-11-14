@@ -12,6 +12,8 @@ class Loginvc: UIViewController, UITextFieldDelegate {
     @IBOutlet var emailRadius: UITextField!
     @IBOutlet var passwordRadius: UITextField!
     @IBOutlet var SigninButtonRadius: UIButton!
+    var lbl:UILabel!
+    var button:UIButton!
     
     
     override func viewDidLoad() {
@@ -61,6 +63,14 @@ class Loginvc: UIViewController, UITextFieldDelegate {
     
     @IBAction func forgot(_ sender: Any) {
         let troubleloginVC = self.storyboard?.instantiateViewController(withIdentifier: "TroubleLoginVC") as? TroubleLoginVC
-        if let objTroubleLoginVC =  troubleloginVC{self.navigationController?.pushViewController(objTroubleLoginVC, animated:true)}
+        if let objTroubleLoginVC =  troubleloginVC{self.navigationController?.pushViewController(objTroubleLoginVC, animated:true)
+        }
     }
-}
+    
+
+    @IBAction func signin(_ sender: Any) {
+        let troubleloginVC = self.storyboard?.instantiateViewController(withIdentifier: "mainTabVC") as? mainTabVC
+        if let objTroubleLoginVC =  troubleloginVC{self.navigationController?.pushViewController(objTroubleLoginVC, animated:true)
+        }
+    }
+                                      }
