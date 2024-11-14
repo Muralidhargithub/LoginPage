@@ -13,7 +13,8 @@ class CreateaccVC: UIViewController, UITextFieldDelegate {
     @IBOutlet var email: UITextField!
     @IBOutlet var password: UITextField!
     @IBOutlet var signUpButton: UIButton!
-
+    @IBOutlet var already: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +55,13 @@ class CreateaccVC: UIViewController, UITextFieldDelegate {
            textField.layer.borderWidth = 1.0 // Reset width
        }
     
-
+    @IBAction func signin(_ sender: Any) {
+    let loginvc = self.storyboard?.instantiateViewController(withIdentifier: "Loginvc") as? Loginvc
+            if let objloginvc = loginvc{
+                self.navigationController?.pushViewController(objloginvc, animated: true)
+            }
+        }
+    
     
 
 }

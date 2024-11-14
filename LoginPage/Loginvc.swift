@@ -49,5 +49,18 @@ class Loginvc: UIViewController, UITextFieldDelegate {
         textField.layer.borderColor = UIColor.orange.cgColor // Default color when not focused
         textField.layer.borderWidth = 1.0 // Reset width
     }
-
+    
+    
+    @IBAction func createAcountSegue(_ sender: Any) {
+        let createaccVC = self.storyboard?.instantiateViewController(withIdentifier: "CreateaccVC") as? CreateaccVC
+        if let objCreateaccVC = createaccVC{
+            self.navigationController?.pushViewController(objCreateaccVC, animated: true)
+        }
+    }
+    
+    
+    @IBAction func forgot(_ sender: Any) {
+        let troubleloginVC = self.storyboard?.instantiateViewController(withIdentifier: "TroubleLoginVC") as? TroubleLoginVC
+        if let objTroubleLoginVC =  troubleloginVC{self.navigationController?.pushViewController(objTroubleLoginVC, animated:true)}
+    }
 }

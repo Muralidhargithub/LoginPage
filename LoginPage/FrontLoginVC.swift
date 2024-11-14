@@ -8,7 +8,7 @@
 import UIKit
 
 class FrontLoginVC: UIViewController {
-
+    
     @IBOutlet var loginButton: UIButton!
     
     @IBOutlet var registerButton: UIButton!
@@ -16,8 +16,8 @@ class FrontLoginVC: UIViewController {
         super.viewDidLoad()
         buttonradius(loginButton)
         buttonradius(registerButton)
-
-
+        
+        
     }
     func buttonradius(_ button: UIButton){
         button.layer.cornerRadius=10
@@ -25,7 +25,27 @@ class FrontLoginVC: UIViewController {
         
     }
     
-
+    @IBAction func login(_ sender: Any) {
+        let  loginvc = self.storyboard?.instantiateViewController(withIdentifier: "Loginvc") as? Loginvc
+        if let objloginvc = loginvc{
+            self.navigationController?.pushViewController(objloginvc, animated: true)
+        }
+        
+    }
+    
+    @IBAction func register(_ sender: Any) {
+        let createaccvc = self.storyboard?.instantiateViewController(withIdentifier: "CreateaccVC") as? CreateaccVC
+        if let objcreateaccvc = createaccvc{
+            self.navigationController?
+                .pushViewController(objcreateaccvc, animated: true)
+        }
+    }
+    
+}
+        
+        
+        
+    
     /*
      @IBOutlet weak var createButton: UIButton!
      @IBOutlet weak var alreadyButton: UIButton!
@@ -59,4 +79,4 @@ class FrontLoginVC: UIViewController {
      }
     */
 
-}
+
