@@ -1,92 +1,98 @@
 import UIKit
 
-class eventVC: UIViewController {
+class eventVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    // Sample events
+    let gridEvents: [Event] = [
+        Event(organizationName: "Career fairs at your school", eventTitle: "", dateInfo: "", tags: []),
+        Event(organizationName: "Career center employer events", eventTitle: "", dateInfo: "", tags: []),
+        Event(organizationName: "Career center guidance events", eventTitle: "", dateInfo: "", tags: []),
+        Event(organizationName: "Events hosted by employers", eventTitle: "", dateInfo: "", tags: [])
+    ]
+    
+    let detailedEvents: [Event] = [
+        Event(organizationName: "Miami-Dade County Public Schools", eventTitle: "Miami-Dade County Public Schools Info Session", dateInfo: "Virtual • Thu Jan 11 2024 • 2:00 PM EST", tags: ["HIRING"]),
+        Event(organizationName: "McKinsey & Company", eventTitle: "International MBA Abroad Session", dateInfo: "Virtual • Tue Apr 9 2024 • 9:00 AM EDT", tags: ["EMPLOYER INFO", "GUIDANCE"]),
+        Event(organizationName: "Google Inc.", eventTitle: "Google Tech Talk", dateInfo: "Virtual • Mon Mar 1 2024 • 10:00 AM PST", tags: ["INTERNSHIPS"]),
+        Event(organizationName: "Amazon", eventTitle: "AWS Career Fair", dateInfo: "Virtual • Wed Feb 20 2024 • 1:00 PM PST", tags: ["HIRING", "TECH TALK"])
+    ]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         setupUnderline()
         setupScrollViewWithButtons()
+        setupScrollUnderline()
+        setupCollectionView()
+        setupEventsHeading()
+        setupTableView()
     }
 
     func setupNavigationBar() {
-        // Create profile button using SF Symbol directly
         let profileButton = UIBarButtonItem(
-            image: UIImage(systemName: "person.crop.circle"), // Use SF Symbols
+            image: UIImage(systemName: "person.crop.circle"),
             style: .plain,
             target: self,
             action: #selector(profileButtonTapped)
         )
-        profileButton.tintColor = .label // Adapts to light/dark mode
+        profileButton.tintColor = .label
 
-        // Create custom title label
         let titleLabel = UILabel()
         titleLabel.text = "Events"
         titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         titleLabel.textColor = .label
 
-        // Set profile button and title label as left bar button items
         let leftTitleItem = UIBarButtonItem(customView: titleLabel)
         navigationItem.leftBarButtonItems = [profileButton, leftTitleItem]
 
-        // Create calendar button
         let calendarButton = UIBarButtonItem(
-            image: UIImage(systemName: "calendar"), // Use SF Symbols
+            image: UIImage(systemName: "calendar"),
             style: .plain,
             target: self,
             action: #selector(calendarButtonTapped)
         )
 
-        // Create tick mark button
         let tickMarkButton = UIBarButtonItem(
-            image: UIImage(systemName: "checkmark.circle"), // Use SF Symbols
+            image: UIImage(systemName: "checkmark.circle"),
             style: .plain,
             target: self,
             action: #selector(tickMarkButtonTapped)
         )
 
-        // Add buttons to navigation bar
         navigationItem.rightBarButtonItems = [tickMarkButton, calendarButton]
     }
 
     func setupUnderline() {
-        // Create an underline view
         let underlineView = UIView()
         underlineView.translatesAutoresizingMaskIntoConstraints = false
         underlineView.backgroundColor = .lightGray
-
-        // Add the underline view to the main view
         view.addSubview(underlineView)
 
-        // Set up constraints for the underline view
         NSLayoutConstraint.activate([
-            underlineView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 03), // Adjust the constant if necessary
+            underlineView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 3),
             underlineView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             underlineView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            underlineView.heightAnchor.constraint(equalToConstant: 1) // Adjust the height as desired
+            underlineView.heightAnchor.constraint(equalToConstant: 1)
         ])
     }
 
     func setupScrollViewWithButtons() {
-        // Create a horizontal scroll view
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.showsHorizontalScrollIndicator = false
         view.addSubview(scrollView)
 
-        // Set constraints for the scroll view
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 05), // Position below underline
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.heightAnchor.constraint(equalToConstant: 50)
         ])
 
-        // Create a content view to hold the buttons
         let contentView = UIView()
         contentView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.addSubview(contentView)
 
-        // Set constraints for the content view
         NSLayoutConstraint.activate([
             contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
@@ -95,7 +101,6 @@ class eventVC: UIViewController {
             contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
         ])
 
-        // Create buttons and add them to the content view
         let buttonTitles = ["Search", "Sort", "Category", "Medium", "Date", "More Filters"]
         let buttonIcons = ["magnifyingglass", "arrow.up.arrow.down", "", "", "", "line.horizontal.3.decrease"]
 
@@ -113,43 +118,266 @@ class eventVC: UIViewController {
 
             contentView.addSubview(button)
 
-            // Set button constraints
             if let previousButton = previousButton {
                 button.leadingAnchor.constraint(equalTo: previousButton.trailingAnchor, constant: 16).isActive = true
             } else {
                 button.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16).isActive = true
             }
-            
-            button.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
 
+            button.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
             previousButton = button
         }
 
-        // Set trailing constraint of the last button to the content view
         if let previousButton = previousButton {
             previousButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16).isActive = true
         }
     }
 
-    // Action for calendar button
+    func setupScrollUnderline() {
+        let scrollUnderlineView = UIView()
+        scrollUnderlineView.translatesAutoresizingMaskIntoConstraints = false
+        scrollUnderlineView.backgroundColor = .lightGray
+        view.addSubview(scrollUnderlineView)
+
+        NSLayoutConstraint.activate([
+            scrollUnderlineView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 60),
+            scrollUnderlineView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            scrollUnderlineView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            scrollUnderlineView.heightAnchor.constraint(equalToConstant: 1)
+        ])
+    }
+
+    func setupCollectionView() {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = 16
+        layout.minimumInteritemSpacing = 16
+
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .clear
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(EventCollectionViewCell.self, forCellWithReuseIdentifier: "EventCell")
+
+        view.addSubview(collectionView)
+
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 110),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            collectionView.heightAnchor.constraint(equalToConstant: 180) // Reduced height for more space
+        ])
+    }
+
+    func setupEventsHeading() {
+        let eventsHeading = UILabel()
+        eventsHeading.translatesAutoresizingMaskIntoConstraints = false
+        eventsHeading.text = "All Events"
+        eventsHeading.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        eventsHeading.textColor = .label
+
+        view.addSubview(eventsHeading)
+
+        NSLayoutConstraint.activate([
+            eventsHeading.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 300), // Position below collection view
+            eventsHeading.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            eventsHeading.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+        ])
+    }
+
+    func setupTableView() {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(EventTableViewCell.self, forCellReuseIdentifier: "EventCell")
+
+        view.addSubview(tableView)
+
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 330), // Position below "All Events" heading
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+
+    // MARK: - UICollectionViewDataSource
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return gridEvents.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EventCell", for: indexPath) as! EventCollectionViewCell
+        cell.configure(with: gridEvents[indexPath.item])
+        return cell
+    }
+
+    // MARK: - UICollectionViewDelegateFlowLayout
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (collectionView.frame.width - 16) / 2 // Two items per row with spacing
+        return CGSize(width: width, height: 150)
+    }
+
+    // MARK: - UITableViewDataSource
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return detailedEvents.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath) as! EventTableViewCell
+        cell.configure(with: detailedEvents[indexPath.row])
+        return cell
+    }
+
+    // MARK: - Actions
+
     @objc func calendarButtonTapped() {
         print("Calendar button tapped")
     }
 
-    // Action for tick mark button
     @objc func tickMarkButtonTapped() {
         print("Tick mark button tapped")
     }
 
-    // Action for profile button
     @objc func profileButtonTapped() {
         print("Profile button tapped")
     }
 
-    // Action for filter buttons in the scroll view
     @objc func filterButtonTapped(_ sender: UIButton) {
         if let title = sender.titleLabel?.text {
             print("\(title) button tapped")
         }
+    }
+}
+
+// MARK: - Event Model
+
+struct Event {
+    let organizationName: String
+    let eventTitle: String
+    let dateInfo: String
+    let tags: [String]
+}
+
+// MARK: - EventTableViewCell
+
+class EventTableViewCell: UITableViewCell {
+
+    private let organizationLabel = UILabel()
+    private let eventTitleLabel = UILabel()
+    private let dateInfoLabel = UILabel()
+    private let tagsStackView = UIStackView()
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupViews()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupViews() {
+        organizationLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        eventTitleLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        dateInfoLabel.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        dateInfoLabel.textColor = .gray
+
+        [organizationLabel, eventTitleLabel, dateInfoLabel, tagsStackView].forEach {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            contentView.addSubview($0)
+        }
+
+        tagsStackView.axis = .horizontal
+        tagsStackView.spacing = 8
+
+        NSLayoutConstraint.activate([
+            organizationLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            organizationLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            organizationLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+
+            eventTitleLabel.topAnchor.constraint(equalTo: organizationLabel.bottomAnchor, constant: 4),
+            eventTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            eventTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+
+            dateInfoLabel.topAnchor.constraint(equalTo: eventTitleLabel.bottomAnchor, constant: 4),
+            dateInfoLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            dateInfoLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+
+            tagsStackView.topAnchor.constraint(equalTo: dateInfoLabel.bottomAnchor, constant: 8),
+            tagsStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            tagsStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            tagsStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10)
+        ])
+    }
+
+    func configure(with event: Event) {
+        organizationLabel.text = event.organizationName
+        eventTitleLabel.text = event.eventTitle
+        dateInfoLabel.text = event.dateInfo
+
+        tagsStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+
+        for tag in event.tags {
+            let tagLabel = UILabel()
+            tagLabel.text = tag
+            tagLabel.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+            tagLabel.textColor = .white
+            tagLabel.backgroundColor = .systemBlue
+            tagLabel.layer.cornerRadius = 5
+            tagLabel.layer.masksToBounds = true
+            tagLabel.textAlignment = .center
+            tagLabel.translatesAutoresizingMaskIntoConstraints = false
+            tagLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
+            tagLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: 50).isActive = true
+            tagsStackView.addArrangedSubview(tagLabel)
+        }
+    }
+}
+
+// MARK: - EventCollectionViewCell
+
+class EventCollectionViewCell: UICollectionViewCell {
+    private let titleLabel = UILabel()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupViews()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupViews() {
+        backgroundColor = .white
+        layer.cornerRadius = 10
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.1
+        layer.shadowOffset = CGSize(width: 0, height: 1)
+        layer.shadowRadius = 5
+
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.font = UIFont.systemFont(ofSize: 16, weight: .medium)
+        titleLabel.textColor = .black
+        titleLabel.numberOfLines = 2
+
+        contentView.addSubview(titleLabel)
+
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
+            titleLabel.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor, constant: -16)
+        ])
+    }
+
+    func configure(with event: Event) {
+        titleLabel.text = event.organizationName
     }
 }
