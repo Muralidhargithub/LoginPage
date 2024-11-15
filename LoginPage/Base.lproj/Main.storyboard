@@ -112,7 +112,7 @@ interest and study major</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="985" y="-56"/>
+            <point key="canvasLocation" x="2837.4045801526718" y="-56.338028169014088"/>
         </scene>
         <!--CreateaccVC-->
         <scene sceneID="UIx-Nl-7BB">
@@ -309,25 +309,32 @@ existing jobs</string>
                                 </buttonConfiguration>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpE-dR-oNi">
-                                <rect key="frame" x="0.0" y="59" width="50" height="35"/>
+                                <rect key="frame" x="0.0" y="59" width="109.33333333333333" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="109.33" id="fnl-qg-NqU"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="person.crop.circle" catalog="system">
+                                <buttonConfiguration key="configuration" style="plain" image="person.crop.circle" catalog="system" title="  Button">
                                     <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="3Nz-7i-2of" kind="push" id="poh-67-xSw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0T5-SI-GjH"/>
                         <constraints>
                             <constraint firstItem="vPZ-22-UcD" firstAttribute="leading" secondItem="wu8-tm-jIW" secondAttribute="leading" constant="273" id="1SX-3Q-iYS"/>
                             <constraint firstItem="LXd-G5-bMs" firstAttribute="top" secondItem="wu8-tm-jIW" secondAttribute="top" constant="60" id="APf-7F-mb8"/>
+                            <constraint firstItem="NpE-dR-oNi" firstAttribute="leading" secondItem="0T5-SI-GjH" secondAttribute="leading" id="GZJ-rb-In2"/>
                             <constraint firstItem="0T5-SI-GjH" firstAttribute="bottom" secondItem="LXd-G5-bMs" secondAttribute="bottom" constant="674" id="Ha8-PS-oPc"/>
                             <constraint firstItem="LXd-G5-bMs" firstAttribute="leading" secondItem="wu8-tm-jIW" secondAttribute="leading" constant="328" id="Opt-Dn-KBn"/>
-                            <constraint firstItem="vPZ-22-UcD" firstAttribute="leading" secondItem="NpE-dR-oNi" secondAttribute="trailing" constant="223" id="S8T-rw-3Lh"/>
                             <constraint firstItem="0T5-SI-GjH" firstAttribute="bottom" secondItem="vPZ-22-UcD" secondAttribute="bottom" constant="674" id="TUl-Tt-1yL"/>
                             <constraint firstItem="NpE-dR-oNi" firstAttribute="leading" secondItem="0T5-SI-GjH" secondAttribute="leading" id="cW7-lL-4LZ"/>
                             <constraint firstItem="LXd-G5-bMs" firstAttribute="leading" secondItem="vPZ-22-UcD" secondAttribute="trailing" constant="8" symbolic="YES" id="hhG-TI-B4f"/>
                             <constraint firstItem="vPZ-22-UcD" firstAttribute="top" secondItem="wu8-tm-jIW" secondAttribute="top" constant="60" id="oQQ-O1-z0A"/>
                             <constraint firstAttribute="trailing" secondItem="LXd-G5-bMs" secondAttribute="trailing" constant="16" id="tFz-7j-rED"/>
+                            <constraint firstItem="vPZ-22-UcD" firstAttribute="leading" secondItem="NpE-dR-oNi" secondAttribute="trailing" constant="163.66999999999999" id="wW4-PK-v6k"/>
                             <constraint firstItem="NpE-dR-oNi" firstAttribute="top" secondItem="0T5-SI-GjH" secondAttribute="top" id="yYf-6g-UG4"/>
                         </constraints>
                     </view>
@@ -335,7 +342,7 @@ existing jobs</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9DK-Vv-AYN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3860" y="264"/>
+            <point key="canvasLocation" x="-4334" y="265"/>
         </scene>
         <!--Explore-->
         <scene sceneID="bFF-pD-mRz">
@@ -344,137 +351,46 @@ existing jobs</string>
                     <view key="view" contentMode="scaleToFill" id="aux-sK-oIG">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QYm-YZ-FWw">
-                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Xd-9s-Euk">
-                                        <rect key="frame" x="-126" y="0.0" width="729" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    </view>
-                                </subviews>
-                            </scrollView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="wDl-Qo-WCc"/>
-                        <constraints>
-                            <constraint firstItem="QYm-YZ-FWw" firstAttribute="leading" secondItem="wDl-Qo-WCc" secondAttribute="leading" id="2qM-Gb-WgF"/>
-                            <constraint firstItem="wDl-Qo-WCc" firstAttribute="trailing" secondItem="QYm-YZ-FWw" secondAttribute="trailing" id="K1h-cC-fA8"/>
-                            <constraint firstItem="wDl-Qo-WCc" firstAttribute="bottom" secondItem="QYm-YZ-FWw" secondAttribute="bottom" id="Ztw-Ef-ALy"/>
-                            <constraint firstItem="QYm-YZ-FWw" firstAttribute="top" secondItem="wDl-Qo-WCc" secondAttribute="top" id="sad-Dq-D30"/>
-                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Explore" image="safari" catalog="system" selectedImage="safari" id="ejw-wv-Mpq"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="safari" catalog="system" selectedImage="safari" id="ncH-4h-nf6"/>
+                    <navigationItem key="navigationItem" id="f6w-zb-Li0"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EtT-Q9-hpy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3135.1145038167938" y="264.78873239436621"/>
+            <point key="canvasLocation" x="-2350" y="315"/>
         </scene>
-        <!--Events-->
+        <!--EventVC-->
         <scene sceneID="Q1c-lL-Kkd">
             <objects>
-                <viewController storyboardIdentifier="eventvc" id="5at-9H-8Di" customClass="eventvc" customModule="LoginPage" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventVC" id="5at-9H-8Di" customClass="eventVC" customModule="LoginPage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KJz-Ld-2AW">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqA-9M-Wud">
-                                <rect key="frame" x="328" y="59" width="50" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="gOB-0U-ONE"/>
-                                    <constraint firstAttribute="height" constant="35" id="uh0-0L-OAS"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="calendar" catalog="system">
-                                    <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5UV-vM-7Ek">
-                                <rect key="frame" x="271" y="59" width="50" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="1V3-xL-bxE"/>
-                                    <constraint firstAttribute="width" constant="50" id="8pp-rq-dHc"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="checkmark.circle" catalog="system">
-                                    <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                            </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fAo-zc-luK">
-                                <rect key="frame" x="0.0" y="94" width="393" height="675"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tUB-nd-4Ko">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5a-z8-FEB">
-                                                <rect key="frame" x="0.0" y="0.0" width="102" height="50"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass.circle" catalog="system">
-                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Y9-Pf-kU1">
-                                                <rect key="frame" x="102" y="0.0" width="51" height="50"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="line.horizontal.3.decrease" catalog="system">
-                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FsA-mJ-oZd">
-                                                <rect key="frame" x="153" y="0.0" width="94.333333333333314" height="50"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Category">
-                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2HD-ee-slM">
-                                                <rect key="frame" x="247.33333333333334" y="0.0" width="85.666666666666657" height="50"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Medium">
-                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8E-9x-HL7">
-                                                <rect key="frame" x="333" y="0.0" width="60" height="50"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Date">
-                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="V0X-EG-Wi0"/>
-                                            <constraint firstAttribute="width" constant="393" id="rmY-SM-qcV"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="tUB-nd-4Ko" secondAttribute="trailing" id="Ja5-1N-fu0"/>
-                                    <constraint firstItem="tUB-nd-4Ko" firstAttribute="leading" secondItem="fAo-zc-luK" secondAttribute="leading" id="Rr5-BQ-3qs"/>
-                                    <constraint firstItem="tUB-nd-4Ko" firstAttribute="top" secondItem="fAo-zc-luK" secondAttribute="top" id="nQi-LP-JgU"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="f8T-eU-ss6"/>
-                        <constraints>
-                            <constraint firstItem="lqA-9M-Wud" firstAttribute="leading" secondItem="5UV-vM-7Ek" secondAttribute="trailing" constant="7" id="0z8-QX-jIZ"/>
-                            <constraint firstItem="f8T-eU-ss6" firstAttribute="trailing" secondItem="lqA-9M-Wud" secondAttribute="trailing" constant="15" id="HHn-TR-0lB"/>
-                            <constraint firstItem="5UV-vM-7Ek" firstAttribute="leading" secondItem="f8T-eU-ss6" secondAttribute="leading" constant="271" id="HaG-m6-dfP"/>
-                            <constraint firstItem="fAo-zc-luK" firstAttribute="leading" secondItem="f8T-eU-ss6" secondAttribute="leading" id="MVy-eX-UUZ"/>
-                            <constraint firstItem="lqA-9M-Wud" firstAttribute="leading" secondItem="5UV-vM-7Ek" secondAttribute="trailing" constant="7" id="ZYG-Lb-rlx"/>
-                            <constraint firstItem="lqA-9M-Wud" firstAttribute="top" secondItem="f8T-eU-ss6" secondAttribute="top" id="geR-qt-Z85"/>
-                            <constraint firstItem="fAo-zc-luK" firstAttribute="top" secondItem="lqA-9M-Wud" secondAttribute="bottom" id="hBx-O5-qzj"/>
-                            <constraint firstItem="f8T-eU-ss6" firstAttribute="bottom" secondItem="fAo-zc-luK" secondAttribute="bottom" id="l26-Vz-rUG"/>
-                            <constraint firstItem="fAo-zc-luK" firstAttribute="trailing" secondItem="f8T-eU-ss6" secondAttribute="trailing" id="ohZ-On-ScU"/>
-                            <constraint firstItem="5UV-vM-7Ek" firstAttribute="top" secondItem="f8T-eU-ss6" secondAttribute="top" id="tTc-3G-GHN"/>
-                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Events" image="calendar" catalog="system" selectedImage="calendar" id="19r-wz-h0n"/>
                     <navigationItem key="navigationItem" id="v3j-Xa-A4Z"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tNg-Pb-Z4R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2411.450381679389" y="264.78873239436621"/>
+            <point key="canvasLocation" x="-261.83206106870227" y="281.69014084507046"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="abE-gU-auf">
+            <objects>
+                <viewController id="3Nz-7i-2of" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MC2-J6-bpI">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8ef-X2-AD5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="OHO-ap-mih"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Upk-w0-1cK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2597" y="1015"/>
         </scene>
         <!--mail-->
         <scene sceneID="oVS-no-h8b">
@@ -484,27 +400,309 @@ existing jobs</string>
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="AsE-Km-5U6">
-                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="n7O-TG-Tt1" id="WXB-7b-iQp"/>
-                                </connections>
-                            </searchBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Q2-y9-OoD">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ilc-EI-nML">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1200"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KoE-GY-F12">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="80"/>
+                                                <subviews>
+                                                    <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jMP-QK-UAT">
+                                                        <rect key="frame" x="0.0" y="18" width="393" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="n7O-TG-Tt1" id="gcE-9M-aUh"/>
+                                                        </connections>
+                                                    </searchBar>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="sGV-Wk-TKm"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOh-TM-Y9T">
+                                                <rect key="frame" x="0.0" y="80" width="393" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZrU-Gv-mN2">
+                                                        <rect key="frame" x="0.0" y="0.0" width="283" height="67"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="person.circle" catalog="system" title="  James" titlePadding="0.0" titleAlignment="leading">
+                                                            <string key="subtitle">  Recruiting for Ios Developer
+  Hello Muralidhar, I am Excited to</string>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="1x3-QI-ten"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="neM-BO-Qs9">
+                                                <rect key="frame" x="0.0" y="160" width="393" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LFI-uh-j1u">
+                                                        <rect key="frame" x="0.0" y="0.0" width="283" height="67"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="person.circle" catalog="system" title="  Andrew " titlePadding="0.0" titleAlignment="leading">
+                                                            <string key="subtitle">  Recruiting for Ios Developer
+  Hello Muralidhar, I am Excited to</string>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="ZJe-e4-liH"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eiy-Hh-uCg">
+                                                <rect key="frame" x="0.0" y="240" width="393" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbG-zB-y0l">
+                                                        <rect key="frame" x="0.0" y="0.0" width="283" height="67"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="person.circle" catalog="system" title="  Eddie Celis" titlePadding="0.0" titleAlignment="leading">
+                                                            <string key="subtitle">  Recruiting for Ios Developer
+  Hello Muralidhar, I am Excited to</string>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="9yh-ab-HFx"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VR7-Y7-tgX">
+                                                <rect key="frame" x="0.0" y="320" width="393" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jes-7T-3J6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="283" height="67"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="person.circle" catalog="system" title="  Hardy Rawan" titlePadding="0.0" titleAlignment="leading">
+                                                            <string key="subtitle">  Recruiting for Ios Developer
+  Hello Muralidhar, I am Excited to</string>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="dUK-Z1-hqI"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Win-2J-RTS">
+                                                <rect key="frame" x="0.0" y="400" width="393" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="elP-Pj-xew">
+                                                        <rect key="frame" x="0.0" y="0.0" width="283" height="67"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="person.circle" catalog="system" title="  George" titlePadding="0.0" titleAlignment="leading">
+                                                            <string key="subtitle">  Recruiting for Ios Developer
+  Hello Muralidhar, I am Excited to</string>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="d3X-TL-ZLj"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tgQ-sb-vPD">
+                                                <rect key="frame" x="0.0" y="480" width="393" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHC-HR-mYS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="283" height="67"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="person.circle" catalog="system" title="  Amanda Scales" titlePadding="0.0" titleAlignment="leading">
+                                                            <string key="subtitle">  Recruiting for Ios Developer
+  Hello Muralidhar, I am Excited to</string>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="cTw-eB-Juu"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aw7-w2-VsZ">
+                                                <rect key="frame" x="0.0" y="560" width="393" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a9e-ed-Gig">
+                                                        <rect key="frame" x="0.0" y="0.0" width="283" height="67"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="person.circle" catalog="system" title="  Raymond" titlePadding="0.0" titleAlignment="leading">
+                                                            <string key="subtitle">  Recruiting for Ios Developer
+  Hello Muralidhar, I am Excited to</string>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="4io-mz-jcK"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWb-F8-45t">
+                                                <rect key="frame" x="0.0" y="640" width="393" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAu-6X-ZxS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="283" height="67"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="person.circle" catalog="system" title="  Molly Earle" titlePadding="0.0" titleAlignment="leading">
+                                                            <string key="subtitle">  Recruiting for Ios Developer
+  Hello Muralidhar, I am Excited to</string>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="rp1-kQ-9zl"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rpt-Zi-Lec">
+                                                <rect key="frame" x="0.0" y="720" width="393" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwu-Ul-5w4">
+                                                        <rect key="frame" x="0.0" y="0.0" width="283" height="67"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="person.circle" catalog="system" title="  Nancy" titlePadding="0.0" titleAlignment="leading">
+                                                            <string key="subtitle">  Recruiting for Ios Developer
+  Hello Muralidhar, I am Excited to</string>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="DWX-GK-KWd"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ijB-WK-O8H">
+                                                <rect key="frame" x="0.0" y="800" width="393" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxf-JW-jdu">
+                                                        <rect key="frame" x="0.0" y="0.0" width="283" height="67"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="person.circle" catalog="system" title="  Haley" titlePadding="0.0" titleAlignment="leading">
+                                                            <string key="subtitle">  Recruiting for Ios Developer
+  Hello Muralidhar, I am Excited to</string>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="Z9R-wV-ACQ"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3e5-7g-pW6">
+                                                <rect key="frame" x="0.0" y="880" width="393" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f83-3l-5tW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="283" height="67"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="person.circle" catalog="system" title="  Talisha" titlePadding="0.0" titleAlignment="leading">
+                                                            <string key="subtitle">  Recruiting for Ios Developer
+  Hello Muralidhar, I am Excited to</string>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="hYD-3b-E0x"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hfk-gu-LTS">
+                                                <rect key="frame" x="0.0" y="960" width="393" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9Z-38-xLN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="283" height="67"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="person.circle" catalog="system" title="  Amanda Scales" titlePadding="0.0" titleAlignment="leading">
+                                                            <string key="subtitle">  Recruiting for Ios Developer
+  Hello Muralidhar, I am Excited to</string>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="eHK-Ta-Tea"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5j6-Ng-lgB">
+                                                <rect key="frame" x="0.0" y="1040" width="393" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0L-zt-hye">
+                                                        <rect key="frame" x="55" y="0.0" width="283" height="67"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="person.circle" catalog="system" title="  Amanda Scales" titlePadding="0.0" titleAlignment="leading">
+                                                            <string key="subtitle">  Recruiting for Ios Developer
+  Hello Muralidhar, I am Excited to</string>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="GP3-ad-sZ1"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pd4-em-s1u">
+                                                <rect key="frame" x="0.0" y="1120" width="393" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqv-nq-DCA">
+                                                        <rect key="frame" x="55" y="6" width="283" height="67"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" image="person.circle" catalog="system" title="  Justine" titlePadding="0.0" titleAlignment="leading">
+                                                            <string key="subtitle">  Recruiting for Ios Developer
+  Hello Muralidhar, I am Excited to</string>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="ss0-cE-uVe"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ilc-EI-nML" firstAttribute="width" secondItem="Txz-70-Z57" secondAttribute="width" id="1ZY-Ke-DdL"/>
+                                    <constraint firstItem="Ilc-EI-nML" firstAttribute="trailing" secondItem="npI-NO-QHd" secondAttribute="trailing" id="IPm-mC-pkV"/>
+                                    <constraint firstItem="Ilc-EI-nML" firstAttribute="bottom" secondItem="npI-NO-QHd" secondAttribute="bottom" id="ica-XL-IsO"/>
+                                    <constraint firstItem="Ilc-EI-nML" firstAttribute="top" secondItem="npI-NO-QHd" secondAttribute="top" id="o61-ye-NpQ"/>
+                                    <constraint firstItem="Ilc-EI-nML" firstAttribute="leading" secondItem="npI-NO-QHd" secondAttribute="leading" id="sC3-W2-w9H"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="npI-NO-QHd"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="Txz-70-Z57"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fF9-qd-Q7U"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="AsE-Km-5U6" firstAttribute="leading" secondItem="fF9-qd-Q7U" secondAttribute="leading" id="9iw-Ea-5Jw"/>
-                            <constraint firstItem="AsE-Km-5U6" firstAttribute="trailing" secondItem="fF9-qd-Q7U" secondAttribute="trailing" id="WTJ-Y6-8LJ"/>
-                            <constraint firstItem="AsE-Km-5U6" firstAttribute="top" secondItem="fF9-qd-Q7U" secondAttribute="top" id="sZS-rc-lfI"/>
+                            <constraint firstItem="1Q2-y9-OoD" firstAttribute="trailing" secondItem="fF9-qd-Q7U" secondAttribute="trailing" id="NHp-vK-cwT"/>
+                            <constraint firstItem="1Q2-y9-OoD" firstAttribute="leading" secondItem="fF9-qd-Q7U" secondAttribute="leading" id="sue-Wo-p9o"/>
+                            <constraint firstAttribute="bottom" secondItem="1Q2-y9-OoD" secondAttribute="bottom" id="u5l-Vg-Q3A"/>
+                            <constraint firstItem="1Q2-y9-OoD" firstAttribute="top" secondItem="wsI-cu-GtF" secondAttribute="top" id="xIC-e2-kWH"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="mail" image="envelope.fill" catalog="system" selectedImage="envelope" id="ivM-6R-rRx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J31-QD-z6w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3135" y="-437"/>
+            <point key="canvasLocation" x="-3135.1145038167938" y="-437.32394366197184"/>
         </scene>
         <!--Jobs-->
         <scene sceneID="XKT-jZ-dfZ">
@@ -513,73 +711,8 @@ existing jobs</string>
                     <view key="view" contentMode="scaleToFill" id="YAw-p3-Dh6">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="saM-si-OmL">
-                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="t6P-NP-PpU" id="wWw-jC-y0k"/>
-                                </connections>
-                            </searchBar>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R6l-4V-nRU">
-                                <rect key="frame" x="0.0" y="115" width="393" height="654"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99c-Qy-O6L">
-                                        <rect key="frame" x="0.0" y="0.0" width="377" height="81"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKy-GM-drt">
-                                                <rect key="frame" x="0.0" y="0.0" width="94.333333333333329" height="81"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Role" cornerStyle="capsule">
-                                                    <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZV-Zu-4XD">
-                                                <rect key="frame" x="94.333333333333343" y="0.0" width="94.333333333333343" height="81"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Location" cornerStyle="capsule">
-                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7a-bN-0HS">
-                                                <rect key="frame" x="188.66666666666666" y="0.0" width="93.999999999999972" height="81"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Onsite/Remote" cornerStyle="capsule">
-                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDG-Zl-2Bo">
-                                                <rect key="frame" x="282.66666666666669" y="0.0" width="94.333333333333314" height="81"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="FullTime" cornerStyle="capsule">
-                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </buttonConfiguration>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="81" id="13E-P9-KxD"/>
-                                            <constraint firstAttribute="width" constant="377" id="VpV-As-guD"/>
-                                        </constraints>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="99c-Qy-O6L" secondAttribute="trailing" id="6nk-8r-LbE"/>
-                                    <constraint firstItem="99c-Qy-O6L" firstAttribute="top" secondItem="R6l-4V-nRU" secondAttribute="top" id="Vpk-N8-SHl"/>
-                                    <constraint firstItem="99c-Qy-O6L" firstAttribute="leading" secondItem="R6l-4V-nRU" secondAttribute="leading" id="jM8-yz-ci5"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="sFJ-Qz-b9C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="R6l-4V-nRU" firstAttribute="leading" secondItem="sFJ-Qz-b9C" secondAttribute="leading" id="3Ki-uR-M82"/>
-                            <constraint firstItem="saM-si-OmL" firstAttribute="leading" secondItem="sFJ-Qz-b9C" secondAttribute="leading" id="AsS-fF-bWt"/>
-                            <constraint firstItem="saM-si-OmL" firstAttribute="trailing" secondItem="sFJ-Qz-b9C" secondAttribute="trailing" id="GPr-eg-f3T"/>
-                            <constraint firstItem="R6l-4V-nRU" firstAttribute="top" secondItem="saM-si-OmL" secondAttribute="bottom" id="QAv-6o-xHo"/>
-                            <constraint firstItem="sFJ-Qz-b9C" firstAttribute="trailing" secondItem="R6l-4V-nRU" secondAttribute="trailing" id="ilf-Zc-HRs"/>
-                            <constraint firstItem="sFJ-Qz-b9C" firstAttribute="bottom" secondItem="R6l-4V-nRU" secondAttribute="bottom" id="nsr-XD-95t"/>
-                            <constraint firstItem="saM-si-OmL" firstAttribute="top" secondItem="sFJ-Qz-b9C" secondAttribute="top" id="rI3-j7-JSp"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Jobs" image="building.2.fill" catalog="system" selectedImage="building.2.fill" id="X5n-Kf-mxx"/>
                 </viewController>
@@ -600,9 +733,9 @@ existing jobs</string>
                     <connections>
                         <segue destination="t6P-NP-PpU" kind="relationship" relationship="viewControllers" id="QWN-JK-vhX"/>
                         <segue destination="n7O-TG-Tt1" kind="relationship" relationship="viewControllers" id="GGL-oy-Za5"/>
-                        <segue destination="5at-9H-8Di" kind="relationship" relationship="viewControllers" id="FoI-ox-zbb"/>
-                        <segue destination="6H8-QK-WJ0" kind="relationship" relationship="viewControllers" id="RCG-XP-tbg"/>
+                        <segue destination="qS9-KP-asM" kind="relationship" relationship="viewControllers" id="FoI-ox-zbb"/>
                         <segue destination="7a7-th-DOn" kind="relationship" relationship="viewControllers" id="VA6-7T-tXl"/>
+                        <segue destination="6H8-QK-WJ0" kind="relationship" relationship="viewControllers" id="EpC-Kb-hA4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZw-Nh-0uv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -613,7 +746,7 @@ existing jobs</string>
         <scene sceneID="yhW-co-kX3">
             <objects>
                 <viewController storyboardIdentifier="Loginvc" id="ULB-av-OGG" customClass="Loginvc" customModule="LoginPage" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="241-Kf-r7Z">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="241-Kf-r7Z">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -792,7 +925,11 @@ been missed!</string>
                             <constraint firstItem="CHO-2J-RnB" firstAttribute="centerX" secondItem="241-Kf-r7Z" secondAttribute="centerX" id="zbX-V8-Scn"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="3qH-ba-lVc"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="ebA-zQ-qXg"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="SigninButtonRadius" destination="I8t-nI-3Nc" id="oDW-Qy-ljq"/>
                         <outlet property="emailRadius" destination="VPQ-dG-rgA" id="RYK-uS-Ngo"/>
@@ -801,7 +938,7 @@ been missed!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PsF-Cw-BnH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1250" y="6"/>
+            <point key="canvasLocation" x="602.29007633587787" y="5.6338028169014089"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Np5-Xr-oUc">
@@ -819,7 +956,7 @@ been missed!</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KKy-JI-6Iv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.824427480916029" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="1886.2595419847328" y="-27.464788732394368"/>
         </scene>
         <!--Trouble LoginVC-->
         <scene sceneID="UJQ-sK-sxm">
@@ -933,6 +1070,41 @@ been missed!</string>
             </objects>
             <point key="canvasLocation" x="1963" y="-622"/>
         </scene>
+        <!--Tabjobsvc View Controller-->
+        <scene sceneID="Xw3-eQ-VLI">
+            <objects>
+                <viewController storyboardIdentifier="tabjobsvcViewController" id="mg3-Qg-sq3" customClass="tabjobsvcViewController" customModule="LoginPage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Wj-d1-DhR">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Ksh-8l-haQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4gp-BY-DMz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gaM-Bu-Pi4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2018" y="-1298"/>
+        </scene>
+        <!--Events-->
+        <scene sceneID="gUF-7L-7SZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qS9-KP-asM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Events" image="calendar" catalog="system" selectedImage="calendar" id="19r-wz-h0n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PUS-13-mNy">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5at-9H-8Di" kind="relationship" relationship="rootViewController" id="reK-lv-RIp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jUg-rd-u8e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1188.5496183206105" y="281.69014084507046"/>
+        </scene>
     </scenes>
     <resources>
         <image name="7123025_logo_google_g_icon (1)" width="40" height="40"/>
@@ -944,20 +1116,24 @@ been missed!</string>
         <image name="bookmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="building.2.fill" catalog="system" width="108" height="128"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
-        <image name="checkmark.circle" catalog="system" width="128" height="123"/>
         <image name="envelope" catalog="system" width="128" height="85"/>
         <image name="envelope.fill" catalog="system" width="128" height="85"/>
         <image name="facebook (3)" width="30" height="30"/>
-        <image name="line.horizontal.3.decrease" catalog="system" width="128" height="73"/>
         <image name="lock.circle" catalog="system" width="128" height="123"/>
-        <image name="magnifyingglass.circle" catalog="system" width="128" height="123"/>
+        <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="safari" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

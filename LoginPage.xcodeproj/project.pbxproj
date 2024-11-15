@@ -14,17 +14,29 @@
 		37AB35B42CE2B4D000478358 /* Exceptions for "LoginPage" folder in "LoginPage" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				.swift,
 				Info.plist,
 			);
 			target = 37AB35A12CE2B4CE00478358 /* LoginPage */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		37B5C6362CE7223B004F5B46 /* Exceptions for "LoginPage" folder in "Compile Sources" phase from "LoginPage" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 37AB359E2CE2B4CE00478358 /* Sources */;
+			membershipExceptions = (
+				.swift,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		37AB35A42CE2B4CE00478358 /* LoginPage */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				37AB35B42CE2B4D000478358 /* Exceptions for "LoginPage" folder in "LoginPage" target */,
+				37B5C6362CE7223B004F5B46 /* Exceptions for "LoginPage" folder in "Compile Sources" phase from "LoginPage" target */,
 			);
 			path = LoginPage;
 			sourceTree = "<group>";

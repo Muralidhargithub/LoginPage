@@ -11,48 +11,63 @@ class mailTabVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        radiusCorner(searchButton)
-        //        setUPBordercolor(searchButton)
-        
-        // Do any additional setup after loading the view.
+        setupNavigationBar()
+    }
+
+    func setupNavigationBar() {
+        // Create profile button using SF Symbol directly
+        let profileButton = UIBarButtonItem(
+            image: UIImage(systemName: "person.crop.circle"), // Use SF Symbols
+            style: .plain,
+            target: self,
+            action: #selector(profileButtonTapped)
+        )
+        profileButton.tintColor = .label // Adapts to light/dark mode
+
+        // Create custom title label
+        let titleLabel = UILabel()
+        titleLabel.text = "Events"
+        titleLabel.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+        titleLabel.textColor = .label
+
+        // Set profile button and title label as left bar button items
+        let leftTitleItem = UIBarButtonItem(customView: titleLabel)
+        navigationItem.leftBarButtonItems = [profileButton, leftTitleItem]
+
+        // Create calendar button
+        let calendarButton = UIBarButtonItem(
+            image: UIImage(systemName: "calendar"), // Use SF Symbols
+            style: .plain,
+            target: self,
+            action: #selector(calendarButtonTapped)
+        )
+
+        // Create tick mark button
+        let tickMarkButton = UIBarButtonItem(
+            image: UIImage(systemName: "checkmark.circle"), // Use SF Symbols
+            style: .plain,
+            target: self,
+            action: #selector(tickMarkButtonTapped)
+        )
+
+        // Add buttons to navigation bar
+        navigationItem.rightBarButtonItems = [tickMarkButton, calendarButton]
+    }
+
+    // Action for calendar button
+    @objc func calendarButtonTapped() {
+        print("Calendar button tapped")
+    }
+
+    // Action for tick mark button
+    @objc func tickMarkButtonTapped() {
+        print("Tick mark button tapped")
+    }
+
+    // Action for profile button
+    @objc func profileButtonTapped() {
+        print("Profile button tapped")
     }
 }
-//    func radiusCorner(_ view:UIView){
-//        view.layer.cornerRadius = 10
-//        view.clipsToBounds = true
-//    }
-//    
-//    func setUPBordercolor(_ view:UIView){
-//        view.layer.borderColor = UIColor.black.cgColor
-//        view.layer.borderWidth = 1
-//    }
-//    
-//    func setUpSearchButton(){
-//        searchButton.setTitle("Search", for: .normal)
-//        if let searchIcon = UIImage(named: "MagnifyingGlass"){
-//            searchButton.setImage(searchIcon, for: .normal)
-//        }
-//            
-//            searchButton.tintColor = .gray // Set icon color
-//            searchButton.setTitleColor(.darkGray, for: .normal) // Set text color
-//            
-//            // Set image and title spacing
-//            searchButton.tintColor = .gray // Color for icon
-//                    searchButton.contentHorizontalAlignment = .left // Align content to the left
-//                    searchButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0) // Space icon from left edge
-//                    searchButton.titleEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 0) // Space text from icon
-//        }
-//    }
-//            
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 

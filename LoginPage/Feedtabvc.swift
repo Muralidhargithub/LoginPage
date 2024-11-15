@@ -1,29 +1,32 @@
-//
-//  Feedtabvc.swift
-//  LoginPage
-//
-//  Created by Muralidhar reddy Kakanuru on 11/13/24.
-//
-
 import UIKit
 
 class Feedtabvc: UIViewController {
 
+    // Create the search bar
+    private let searchBar = UISearchBar()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        view.backgroundColor = .white
+        setupSearchBar()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupSearchBar() {
+        // Configure the search bar properties
+        searchBar.placeholder = "Search"
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.searchBarStyle = .minimal
+        
+        // Add the search bar to the view
+        view.addSubview(searchBar)
+        
+        // Set constraints for the search bar to pin it to the top of the view
+        NSLayoutConstraint.activate([
+            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            searchBar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            searchBar.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
-    */
-
 }
