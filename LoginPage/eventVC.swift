@@ -1,13 +1,13 @@
 //
-//  eventvc.swift
+//  eventVC.swift
 //  LoginPage
 //
-//  Created by Muralidhar reddy Kakanuru on 11/13/24.
+//  Created by Muralidhar reddy Kakanuru on 11/15/24.
 //
 
 import UIKit
 
-class eventvc: UIViewController {
+class eventVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
