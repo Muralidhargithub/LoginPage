@@ -7,14 +7,13 @@
 
 import UIKit
 
-class Loginvc: UIViewController, UITextFieldDelegate {
+class Loginvc: UIViewController {
     
     @IBOutlet var emailRadius: UITextField!
     @IBOutlet var passwordRadius: UITextField!
     @IBOutlet var SigninButtonRadius: UIButton!
-    var lbl:UILabel!
-    var button:UIButton!
-    
+    var lbl: UILabel!
+    var button: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,53 +23,86 @@ class Loginvc: UIViewController, UITextFieldDelegate {
         setupTextFieldAppearance(emailRadius)
         setupTextFieldAppearance(passwordRadius)
         
+        // Set text field delegates
         emailRadius.delegate = self
         passwordRadius.delegate = self
     }
     
-    func applyCornerRadius(_ view:UIView){
+    func applyCornerRadius(_ view: UIView) {
         view.layer.cornerRadius = 10
-        view.clipsToBounds=true
+        view.clipsToBounds = true
     }
     
-    //function to add border color
-    func setupTextFieldAppearance(_ view:UIView) {
-        // Set the default border color and width
-        view.layer.borderColor = UIColor.orange.cgColor // Default color
-        view.layer.borderWidth = 1.0 // Set border width
+    func setupTextFieldAppearance(_ view: UIView) {
+        view.layer.borderColor = UIColor.orange.cgColor
+        view.layer.borderWidth = 1.0
     }
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        // Highlight the border color
-        textField.layer.borderColor = UIColor.blue.cgColor // Change color to blue when active
-        textField.layer.borderWidth = 2.0 // Increase width when focused
-    }
-    
-    // When the text field resigns focus
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        // Revert the border color to the default
-        textField.layer.borderColor = UIColor.orange.cgColor // Default color when not focused
-        textField.layer.borderWidth = 1.0 // Reset width
-    }
-    
     
     @IBAction func createAcountSegue(_ sender: Any) {
-        let createaccVC = self.storyboard?.instantiateViewController(withIdentifier: "CreateaccVC") as? CreateaccVC
-        if let objCreateaccVC = createaccVC{
-            self.navigationController?.pushViewController(objCreateaccVC, animated: true)
+        let createaccVC = storyboard?.instantiateViewController(withIdentifier: "CreateaccVC") as? CreateaccVC
+        if let objCreateaccVC = createaccVC {
+            navigationController?.pushViewController(objCreateaccVC, animated: true)
         }
     }
-    
     
     @IBAction func forgot(_ sender: Any) {
-        let troubleloginVC = self.storyboard?.instantiateViewController(withIdentifier: "TroubleLoginVC") as? TroubleLoginVC
-        if let objTroubleLoginVC =  troubleloginVC{self.navigationController?.pushViewController(objTroubleLoginVC, animated:true)
+        let troubleloginVC = storyboard?.instantiateViewController(withIdentifier: "TroubleLoginVC") as? TroubleLoginVC
+        if let objTroubleLoginVC = troubleloginVC {
+            navigationController?.pushViewController(objTroubleLoginVC, animated: true)
         }
     }
     
-
     @IBAction func signin(_ sender: Any) {
-        let troubleloginVC = self.storyboard?.instantiateViewController(withIdentifier: "mainTabVC") as? mainTabVC
-        if let objTroubleLoginVC =  troubleloginVC{self.navigationController?.pushViewController(objTroubleLoginVC, animated:true)
+        validateAndNavigate()
+    }
+}
+
+extension Loginvc: UITextFieldDelegate {
+    
+    // When "Return" key is pressed
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailRadius {
+            passwordRadius.becomeFirstResponder()
+        } else if textField == passwordRadius {
+            validateAndNavigate()
+        }
+        return true
+    }
+    
+    // Validation and Navigation
+    private func validateAndNavigate() {
+        guard let username = emailRadius.text, !username.isEmpty else {
+            showAlert(message: "Username cannot be empty")
+            return
+        }
+        
+        guard let password = passwordRadius.text, !password.isEmpty else {
+            showAlert(message: "Password cannot be empty")
+            return
+        }
+        
+        // Check if the username and password match
+        if username == "Murali" && password == "Kakanuru" {
+            navigateToNextPage()
+        } else {
+            showAlert(message: "Invalid Username or Password")
         }
     }
-                                      }
+    
+    // Alert for errors
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    // Navigation to the next page
+    func navigateToNextPage() {
+        guard let username = emailRadius.text else { return }
+        let nextpage = storyboard?.instantiateViewController(withIdentifier: "mainTabVC") as? mainTabVC
+        nextpage?.username = username
+        if let nextPageVC = nextpage {
+            navigationController?.pushViewController(nextPageVC, animated: true)
+        }
+    }
+}
